@@ -1,6 +1,9 @@
-package benicio.iury.CadastroDeNinjas;
+package benicio.iury.CadastroDeNinjas.Ninjas;
 
+import benicio.iury.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity // transforma a classe em entidade
 @Table(name = "tb_Ninjas_Cadastrados")
@@ -12,6 +15,11 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+
+    //um ninja pode ter apenas uma missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Foreing Key - chave estrangeira
+    private MissoesModel missao;
 
     //Constructors
     public NinjaModel() {
