@@ -13,12 +13,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class NinjaModel {
 
+    /*VARIAVEIS DA ENTIDADE*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
+    //valor único, não pode ter valores repetidos
+    @Column(unique = true)
     private String email;
     private int idade;
+
     //um ninja pode ter apenas uma missão
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreing Key - chave estrangeira
