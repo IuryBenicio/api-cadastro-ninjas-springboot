@@ -16,13 +16,25 @@ public class NinjaModel {
     /*VARIAVEIS DA ENTIDADE*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "_id")
     private Long id;
+
+
+    @Column(name = "nome")
     private String nome;
 
     //valor único, não pode ter valores repetidos
     @Column(unique = true)
     private String email;
+
+
+    @Column(name = "idade")
     private int idade;
+
+    //altera o nome da coluna no banco de dados
+    @Column(name = "img_url")
+    private String imgUrl;
+
 
     //um ninja pode ter apenas uma missão
     @ManyToOne
