@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity // transforma a classe em entidade
-@Table(name = "tb_Ninjas_Cadastrados")
+@Table(name = "tb_ninjas_cadastrados")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,6 +34,9 @@ public class NinjaModel {
     //altera o nome da coluna no banco de dados
     @Column(name = "img_url")
     private String imgUrl;
+
+    @Column(name = "rank")
+    private String rank;
 
 
     //um ninja pode ter apenas uma missão
